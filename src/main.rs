@@ -33,7 +33,7 @@ fn main() {
 
         match input {
             "1" => {
-                transaction_sender.send(services::create_transaction()).unwrap();
+                transaction_sender.send(services::transaction::create_transaction()).unwrap();
             }
             "2" => {
                 // send a transaction every n seconds
@@ -42,7 +42,7 @@ fn main() {
                 std::io::stdin().read_line(&mut seconds_input).unwrap();
                 let seconds: u64 = seconds_input.trim().parse().unwrap();
                 loop {
-                    transaction_sender.send(services::create_transaction()).unwrap();
+                    transaction_sender.send(services::transaction::create_transaction()).unwrap();
                     thread::sleep(std::time::Duration::new(seconds, 0));
                 }
             }
@@ -53,7 +53,7 @@ fn main() {
                 std::io::stdin().read_line(&mut transactions_input).unwrap();
                 let transactions: u64 = transactions_input.trim().parse().unwrap();
                 for _ in 0..transactions {
-                    transaction_sender.send(services::create_transaction()).unwrap();
+                    transaction_sender.send(services::transaction::create_transaction()).unwrap();
                 }
             }
             "4" => {

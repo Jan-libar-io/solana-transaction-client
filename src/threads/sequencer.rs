@@ -1,5 +1,6 @@
 use std::sync::mpsc::Receiver;
-use solana_sdk::transaction::Transaction;
+
+use crate::types::Transaction;
 
 pub fn sequencer(channel_reciever: Receiver<Transaction>) {
     match channel_reciever.recv() {
