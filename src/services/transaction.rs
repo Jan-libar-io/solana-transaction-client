@@ -2,7 +2,6 @@ use solana_sdk::signer::{self, Signer};
 
 use crate::types::Transaction;
 
-
 pub fn create_transaction() -> Transaction {
     let keypair = signer::keypair::read_keypair_file("/home/dev/.solana/testkey.json").unwrap();
     let keypair2 = signer::keypair::read_keypair_file("/home/dev/.solana/mykey_1.json").unwrap();
