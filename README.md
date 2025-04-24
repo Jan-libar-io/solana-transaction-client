@@ -1,7 +1,7 @@
 PMT Rollup
 
-### To run the test client
+# To run the test client
 
-# cargo build
+### cargo build
 
-# cargo run
+### cargo run
